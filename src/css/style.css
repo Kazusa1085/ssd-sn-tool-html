@@ -1,0 +1,127 @@
+/* ===== SSD 工具特有样式 ===== */
+
+/* ---------- 选项卡 ---------- */
+.tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--tab-bg);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 25px;
+}
+.tab-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+  color: var(--tab-text);
+}
+.tab-btn.active {
+  background: var(--tab-active-bg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  color: var(--tab-active-text);
+}
+.tab-btn:hover:not(.active) {
+  background: rgba(255,255,255,0.5);
+}
+
+/* ---------- 面板 ---------- */
+.panel {
+  display: none;
+  animation: fade 0.2s ease;
+}
+.panel.active {
+  display: block;
+}
+@keyframes fade {
+  from { opacity: 0.4; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- DRAM 行内组合 ---------- */
+.dram-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.dram-group input {
+  flex: 1;
+}
+.dram-group button {
+  background: var(--bg-container);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.15s;
+  white-space: nowrap;
+  color: var(--text-secondary);
+}
+.dram-group button:hover {
+  background: var(--primary-light);
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* ---------- 解析输入行 ---------- */
+.parse-input-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.parse-input-row label {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.parse-input-row input {
+  flex: 1;
+  min-width: 180px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: monospace;
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+.parse-input-row input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--input-focus-shadow);
+}
+.parse-input-row .btn {
+  flex-shrink: 0;
+}
+
+/* ---------- 解析结果表格 ---------- */
+.parse-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.parse-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--border);
+}
+.parse-table td:first-child {
+  font-weight: 500;
+  width: 38%;
+  color: var(--text-secondary);
+}
+.parse-table tr:last-child td {
+  border-bottom: none;
+}
