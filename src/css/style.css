@@ -125,3 +125,16 @@
 .parse-table tr:last-child td {
   border-bottom: none;
 }
+
+/* ----- 移除 number 输入框的上下增减按钮 ----- */
+#gen-dram::-webkit-inner-spin-button,
+#gen-dram::-webkit-outer-spin-button,
+#gen-chips::-webkit-inner-spin-button,
+#gen-chips::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#gen-dram,
+#gen-chips {
+  -moz-appearance: textfield; /* Firefox */
+}
